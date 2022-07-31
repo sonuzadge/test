@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Animated Background</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+<script>
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'hello': function() {
+      document.getElementById("content").innerText="hello how are you";
+    },
+
+    'bye': function() {
+      document.getElementById("content").innerText="bye sir";
+    },
+    'google *tag': function(variable) {
+      window.open("https://www.google.com/search?q="+variable);
+    },
+    '*tag play': function(variable) {
+      window.open("https://www.youtube.com/results?search_query="+variable);
+    },
+    'open new tab': function(variable) {
+      window.open("https://www.google.com/");
+    },
+  
+    'open *tag': function(variable) {
+      window.open("https://"+variable+".com/");
+    }
+
+
+
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+</script>
+<!-- partial:index.partial.html -->
+<div id="large-header" class="large-header">
+  <canvas id="demo-canvas"></canvas>
+    <h1 id="content" class="main-title">Connect <span class="thin">Three</span></h1>
+</div>
+<!-- partial -->
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
